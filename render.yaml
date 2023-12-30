@@ -1,7 +1,7 @@
 services:
   - name: backup-db
     type: cron
-    schedule: CRON_SCHEDULE
+    schedule: "0 3 * * *"
     region: frankfurt
     env: docker
     plan: standard
@@ -27,4 +27,3 @@ services:
       # For example, 14
       - key: POSTGRES_VERSION
         sync: false
-
