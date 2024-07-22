@@ -2,9 +2,15 @@
 
 set -o errexit -o nounset -o pipefail
 
+if [ -f .env ]; then
+    source .env
+fi
+
 export AWS_PAGER=""
 
 s3() {
+    # credentials like AWS_ACCESS_KEY_ID or AWS_ENDPOINT_URL are used from env vars implicitly
+    # see https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-endpoints.html#endpoints-service-specific-envvars
     aws s3 --region "$AWS_REGION" "$@"
 }
 

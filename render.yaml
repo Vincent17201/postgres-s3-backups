@@ -48,6 +48,8 @@ services:
       - key: S3_BUCKET_NAME
         sync: false
       # Looks like "AKIAXXXXXXXXXXXXXXXX"
+      - key: AWS_ENDPOINT_URL
+        sync: false
       - key: AWS_ACCESS_KEY_ID
         sync: false
       - key: AWS_SECRET_ACCESS_KEY
